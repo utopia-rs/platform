@@ -1,0 +1,25 @@
+[package]
+name = "utopia-platform"
+description = "Modules, services and actions: describe an application's HTTP routes, CLI tasks and queue workers once, and register them on their servers."
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "BSD-3-Clause"
+
+[dependencies]
+indexmap = "2"
+php-std = { version = "0.1.0", git = "https://github.com/utopia-rs/php-std" }
+serde_json = { version = "1", features = ["raw_value", "preserve_order", "float_roundtrip"] }
+thiserror = "2"
+utopia-cli = { version = "0.1.0", git = "https://github.com/utopia-rs/cli" }
+utopia-http = { version = "0.1.0", git = "https://github.com/utopia-rs/http" }
+utopia-queue = { version = "0.1.0", git = "https://github.com/utopia-rs/queue" }
+utopia-servers = { version = "0.1.0", git = "https://github.com/utopia-rs/servers" }
+utopia-validators = { version = "0.1.0", git = "https://github.com/utopia-rs/validators" }
+
+[dev-dependencies]
+futures-util = { version = "0.3", default-features = false, features = ["std", "async-await-macro"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal", "rt"] }
+
+[package.metadata.utopia]
+php-sync = "809d2819d7da00d8b2f486e3bcb4c98a5265e950"
